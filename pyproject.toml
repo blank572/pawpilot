@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pawpilot"
+version = "0.1.0"
+description = "让大模型真正动手：用自然语言操控你的键盘和鼠标"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "blank572" }]
+keywords = ["ai", "llm", "gui-agent", "computer-use", "automation", "vision"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Desktop Environment",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "mss>=9.0",
+    "pyautogui>=0.9.54",
+    "pillow>=10.0",
+    "rich>=13.0",
+    "openai>=1.40",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.5"]
+
+[project.urls]
+Homepage = "https://github.com/blank572/pawpilot"
+Repository = "https://github.com/blank572/pawpilot"
+Issues = "https://github.com/blank572/pawpilot/issues"
+
+[project.scripts]
+pawpilot = "pawpilot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pawpilot*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
